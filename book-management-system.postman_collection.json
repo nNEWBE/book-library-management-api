@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "c1a3f1ac-6326-4708-b5cb-0bf5889f0ead",
+		"name": "Book-Management-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39342680"
+	},
+	"item": [
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Universe in a Nutshell\",\r\n    \"author\": \"Stephen Hawking\",\r\n    \"publication\": \"Bantam Books\",\r\n    \"publicationYear\": 2001,\r\n    \"availableCopies\": 6,\r\n    \"genre\": \"Science\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"publication\": \"Charles Scribner's Sons\",\r\n    \"publicationYear\": 1925,\r\n    \"availableCopies\": 4,\r\n    \"genre\": \"Classic\"\r\n  }"
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"publication\": \"Charles Scribner's Sons\",\r\n    \"publicationYear\": 1925,\r\n    \"availableCopies\": 4,\r\n    \"genre\": \"Classic\"\r\n  }"
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Single Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"publication\": \"Shuvo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Single Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books By Author",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"publication\": \"Charles Scribner's Sons\",\r\n    \"publicationYear\": 1925,\r\n    \"availableCopies\": 4,\r\n    \"genre\": \"Classic\"\r\n  }"
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/author/J.R.R. Tolkien",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"author",
+						"J.R.R. Tolkien"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By Publication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/publication/George Allen & Unwin",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"publication",
+						"George Allen & Unwin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/books/genre/Fantasy",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"genre",
+						"Fantasy"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": ""
+		}
+	]
+}

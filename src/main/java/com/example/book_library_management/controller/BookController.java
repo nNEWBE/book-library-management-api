@@ -3,10 +3,8 @@ package com.example.book_library_management.controller;
 import com.example.book_library_management.entity.Book;
 import com.example.book_library_management.services.BookServices;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/books")
@@ -15,7 +13,14 @@ public class BookController {
     private final BookServices bookServices;
 
     @PostMapping
-    public Book addBook(@RequestBody Book book) {
-        return bookServices.addBook(book);
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+       Book savedBook = bookServices.addBook(book);
+       return ResponseEntity.ok(savedBook);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+        Book book = bookServices.getBookById(id);
+        return ResponseEntity.ok(book);
     }
 }

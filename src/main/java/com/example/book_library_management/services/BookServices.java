@@ -14,4 +14,8 @@ public class BookServices {
         return bookRepository.save(book);
     }
 
+    public Book getBookById(Long id) {
+        return bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
+    }
+
 }

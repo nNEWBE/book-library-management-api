@@ -5,6 +5,8 @@ import com.example.book_library_management.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BookServices {
@@ -16,6 +18,10 @@ public class BookServices {
 
     public Book getBookById(Long id) {
         return bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
+    }
+
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
     }
 
 }

@@ -19,11 +19,11 @@ It enables librarians to efficiently manage a library’s book collection, suppo
 
 ## 🧱 Technologies Used
 
-- **Java 17+**
-- **Spring Boot 3+**
+- **Java 25**
+- **Spring Boot 3.5.7**
 - **Spring Data JPA**
 - **H2 Database (in-memory)**
-- **Maven**
+- **Gradle**
 
 ---
 

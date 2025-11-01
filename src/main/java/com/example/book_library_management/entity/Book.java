@@ -23,9 +23,9 @@ public class Book {
 
     private String publication;
 
-    private int publicationYear;
+    private Integer publicationYear;
 
-    private int availableCopies;
+    private Integer availableCopies;
 
     private String genre;
 }
